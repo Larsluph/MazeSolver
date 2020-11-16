@@ -111,7 +111,7 @@ void outputMaze() {
 };
 
 int main(int argc, char* argv[]) {
-	//std::string filename = "D:/Dev/Scripts/cpp/utils/Maze_Solver/examples/normal.png";
+	//std::string filename = "D:/Dev/Scripts/cpp/utils/Maze_Solver/examples/perfect2k.png";
 	//int solveMethod = 2;
 	if (argc != 3) {
 		std::cout << "only 2 arguments are allowed\nsyntax: 'maze_solver <input_file> <solve_method>'\nAvailable methods:" << std::endl;
@@ -160,7 +160,7 @@ bool isClear(int x, int y) {
 
 bool isWall(int x, int y)
 {
-	if (x < 0 && x >= cols && y < 0 && y >= rows) return false;
+	if (x < 0 || x >= cols || y < 0 || y >= rows) return false;
 	else return maze.at<bool>(cv::Point(x, y));
 }
 
